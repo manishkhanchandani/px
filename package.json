@@ -53,6 +53,7 @@
     "react-redux": "^5.1.1",
     "react-route": "^1.0.3",
     "react-router-dom": "^4.3.1",
+    "react-star-rating-component": "^1.4.1",
     "redux": "^4.0.1",
     "redux-logger": "^3.0.6",
     "redux-promise-middleware": "^5.1.1",
@@ -65,7 +66,8 @@
     "webpack": "4.19.1",
     "webpack-dev-server": "3.1.9",
     "webpack-manifest-plugin": "2.0.4",
-    "workbox-webpack-plugin": "3.6.3"
+    "workbox-webpack-plugin": "3.6.3",
+    "xml-js": "^1.6.8"
   },
   "scripts": {
     "start": "node scripts/start.js",
@@ -90,6 +92,7 @@
     "setupFiles": [
       "react-app-polyfill/jsdom"
     ],
+    "setupTestFrameworkScriptFile": "<rootDir>/test/setupTests.js",
     "testMatch": [
       "<rootDir>/src/**/__tests__/**/*.{js,jsx,ts,tsx}",
       "<rootDir>/src/**/?(*.)(spec|test).{js,jsx,ts,tsx}"
@@ -130,5 +133,6 @@
   "devDependencies": {
     "check-prop-types": "^1.1.2",
     "moxios": "^0.4.0"
-  }
+  },
+  "proxy": "https://www.goodreads.com"
 }

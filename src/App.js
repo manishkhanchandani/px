@@ -1,26 +1,37 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Loadable from 'react-loadable';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+
+const Loading = () => <div>Loading...</div>;
+const Search = Loadable({
+  loader: () => import('./components/Search.js'),
+  loading: Loading,
+});
+
+const Details = Loadable({
+  loader: () => import('./components/Details.js'),
+  loading: Loading,
+});
+
+
+const NoMatch = Loadable({
+  loader: () => import('./components/NoMatch.js'),
+  loading: Loading,
+});
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+	  <Router>
+      <div className="container">
+	  	<h1>Project Book Search</h1>
+        <Switch>
+		  <Route exact path="/" component={Search}/>
+		  <Route path="/details/:id" component={Details}/>
+		  <Route component={NoMatch} />
+		</Switch>
       </div>
+	  </Router>
     );
   }
 }
