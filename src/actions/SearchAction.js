@@ -29,7 +29,6 @@ export const searchBooks = (name) => (dispatch, getState) => {
 		mode: 'no-cors',
 		url
 	  }).then(response => {
-		  	console.log('response.data: ', response.data);
 			const resp = convert.xml2json(response.data, {compact: true, spaces: 4});
 			const resp2 = JSON.parse(resp);
 			console.log('resp2: ', resp2);

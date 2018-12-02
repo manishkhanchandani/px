@@ -22,7 +22,7 @@ const NoMatch = Loadable({
 class App extends Component {
   render() {
     return (
-	  <Router>
+	  <Router basename={'/px'}>
       <div className="container">
 	  	<h1>Project Book Search</h1>
         <Switch>
