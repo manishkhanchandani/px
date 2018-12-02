@@ -29,3 +29,12 @@
 .item-result {
 	min-height: 300px;
 }
+
+.book-author {
+	margin-bottom: 8px;
+	font-size: 12px;
+}
+
+.custom-spacing {
+	margin-left: 20px;
+}

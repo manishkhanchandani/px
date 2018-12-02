@@ -79,3 +79,13 @@ export const details = (id) => (dispatch, getState) => {
 	
 	//console.log('details end');
 };
+
+
+export const cleardetails = () => (dispatch, getState) => {
+	
+	dispatch({
+		type: DETAILS,
+		payload: null
+	});
+};
+
