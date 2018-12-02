@@ -19,6 +19,7 @@ class Details extends Component {
 			return (<div data-test="component-details">Loading...</div>);	
 		}
 		let url = this.props.searchReducer.details.url._cdata;
+		let rating = parseFloat(this.props.searchReducer.details.average_rating._text);
 		return (
 			<div data-test="component-details">
 				<Link to="/">Back to Search Results</Link>
@@ -75,7 +76,7 @@ class Details extends Component {
 										<StarRatingComponent 
 										  name="rate1" 
 										  starCount={5}
-										  value={4.5}
+										  value={rating}
 										  editing={false}
 										/>
 									</span>
