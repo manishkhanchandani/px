@@ -1,6 +1,6 @@
 import axios from 'axios';
 import convert from 'xml-js';
-import {SEARCH_RESULT, DETAILS, KEY, SEARCH_TERM} from '../constants/actionConstants';
+import {SEARCH_RESULT, DETAILS, KEY, SEARCH_TERM, API_URL} from '../constants/actionConstants';
 
 export const searchBooks = (name) => (dispatch, getState) => {
 	//console.log('-------------');
@@ -21,7 +21,7 @@ export const searchBooks = (name) => (dispatch, getState) => {
 	});
 	//console.log('name is ', name);
 	let searchWord = encodeURIComponent(name);
-	let url = `/search.xml?key=${KEY}&q=${searchWord}`;
+	let url = `${API_URL}search.xml?key=${KEY}&q=${searchWord}`;
 	console.log('url is ', url);
 	
 	return axios({
@@ -60,7 +60,7 @@ export const details = (id) => (dispatch, getState) => {
 	//console.log('-------------');
 	//console.log('details start');
 	//console.log('id is ', id);
-	let url = `/book/isbn/${id}?key=${KEY}`;
+	let url = `${API_URL}book/isbn/${id}?key=${KEY}`;
 	console.log('url is ', url);
 	
 	return axios({
