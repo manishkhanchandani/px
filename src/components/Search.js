@@ -25,7 +25,7 @@ class Search extends Component {
 				<form onSubmit={this.searchBook.bind(this)} className="frm-search" data-test="form-search">
 					<div className=" search-items">
 						<label htmlFor="bookName" className="item-label">Book Name</label>
-						<input type="text" className=" item-input" id="bookName" value={this.state.bookName} onChange={(e) => {this.setState({bookName: e.target.value});}} />
+						<input type="text" className=" item-input" id="bookName" value={this.state.bookName} onChange={(e) => {this.setState({bookName: e.target.value});}} required />
 						<button type="submit" className="btn btn-primary item-btn">Submit</button>
 					</div>
 				</form>
